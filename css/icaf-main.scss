@@ -1,0 +1,368 @@
+@use "sass:math";
+
+@use "./_icaf-carousel.scss";
+@use "./_icaf-footer.scss";
+
+@import "./_icaf-colors.scss";
+
+/* General */
+
+.no-hpad {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+body > .container {
+  max-width: 1440px;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.section-title {
+  color: $ICAF_BLUE;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 55px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  // padding-top: 38px;
+  padding: 35px 0;
+}
+
+.section-description {
+  color: $ICAF_BLUE;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 65px;
+  span {
+    width: 830px;
+  }
+}
+
+a.icaf-button {
+  text-decoration: none;
+  div {
+    background: $ICAF_YELLOW;
+    border-radius: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      color: $ICAF_BLUE;
+      max-width: 130px;
+      text-align: center;
+    }
+  }
+}
+
+/* Cross-Fade */
+.cross-fade {
+  position: relative;
+  > img,
+  > div {
+    position: absolute;
+    animation-iteration-count: infinite;
+  }
+}
+
+/* These animations, each meant for two elements, will fade-in after half the time (1s for the fade) */
+$welcomeCrossFadeDuration: 10s;
+@keyframes welcome-fade {
+  0% {
+    opacity: 0;
+  }
+  // 50 - 100 * (1/10)
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  // 100 - 100 * (1/10)
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+$muralCrossFadeDuration: 6s;
+@keyframes mural-fade {
+  0% {
+    opacity: 0;
+  }
+  // 50 - 100 * (1/6)
+  34% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  // 100 - 100 * (1/6)
+  84% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Section Specific */
+
+.welcome {
+  width: 1358px;
+  margin: 0 auto;
+  margin-top: 147px;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      float: left;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+      img {
+        border-radius: 9px;
+      }
+      /* Cross fade timing */
+      &.cf-group1 {
+        > img,
+        > div {
+          animation-name: welcome-fade;
+          animation-duration: $welcomeCrossFadeDuration;
+          &:nth-child(1) {
+            animation-delay: (-1 * math.div($welcomeCrossFadeDuration, 2));
+          }
+        }
+      }
+      &.cf-group2 {
+        > img,
+        > div {
+          animation-name: welcome-fade;
+          animation-duration: $welcomeCrossFadeDuration;
+          &:nth-child(1) {
+            animation-delay: (-3 * math.div($welcomeCrossFadeDuration, 4));
+          }
+          &:nth-child(2) {
+            animation-delay: (-1 * math.div($welcomeCrossFadeDuration, 4));
+          }
+        }
+      }
+    }
+  }
+  .upper {
+    margin-bottom: 30px;
+    .welcome-box {
+      width: 341px;
+      height: 285px;
+      background: $ICAF_BLUE;
+      border-radius: 9px;
+      > div {
+        padding: 38px;
+        p:first-of-type {
+          font-weight: 800;
+          font-size: 24px;
+          line-height: 33px;
+          color: $ICAF_YELLOW;
+          text-transform: uppercase;
+        }
+        p:last-of-type {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 25px;
+          color: $ICAF_WHITE;
+        }
+      }
+    }
+    .img1 {
+      width: 351px;
+      height: 285px;
+    }
+    .img2 {
+      width: 339px;
+      height: 285px;
+    }
+    .img3 {
+      width: 267px;
+      height: 285px;
+    }
+  }
+  .lower {
+    .img4 {
+      width: 341px;
+      height: 405px;
+    }
+    .img5 {
+      width: 563px;
+      height: 405px;
+    }
+    .img6 {
+      width: 414px;
+      height: 405px;
+    }
+  }
+}
+
+.mural-wrapper-background {
+  background-color: $ICAF_GRAY2;
+  height: 713px;
+  margin-top: 49px;
+  padding: 54px 44px;
+  .mural-wrapper {
+    display: flex;
+    width: 1358px;
+    .murals {
+      &,
+      img {
+        width: 825px;
+        height: 605px;
+      }
+      img {
+        border-radius: 9px 0px 0px 9px;
+        animation-name: mural-fade;
+        animation-duration: $muralCrossFadeDuration;
+        &:nth-child(1) {
+          animation-delay: (-1 * math.div($muralCrossFadeDuration, 2));
+        }
+      }
+    }
+    .mural-text {
+      width: 535px;
+      background-color: $ICAF_BLUE;
+      color: $ICAF_WHITE;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 0px 9px 9px 0px;
+      .mural-title {
+        color: $ICAF_YELLOW;
+        margin-top: 45px;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 27px;
+        text-align: center;
+        max-width: 488px;
+      }
+      .main-text {
+        margin-top: 36px;
+        margin-left: 25px;
+        font-size: 18px;
+        line-height: 25px;
+        ul {
+          max-width: 446px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          padding-left: 17px;
+          margin: 10px 0 40px;
+        }
+      }
+      a.icaf-button {
+        margin-top: 15px;
+        div {
+          width: 138px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+.videoContainer-background {
+  background-color: $ICAF_GRAY2;
+  height: 830px;
+  #videoContainer {
+    background-color: $ICAF_BLUE;
+    margin: 0 41px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    video {
+      width: 1169px;
+      height: 653px;
+    }
+    #volumeControl {
+      z-index: 10;
+      position: absolute;
+      bottom: 47%;
+      right: 2%;
+      display: none;
+      img {
+        width: 45px;
+        &:first-of-type {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+#whatWeDo {
+  width: 1290px;
+  margin: 0 auto;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 47px;
+    li {
+      float: left;
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+      .wwd-card {
+        position: relative;
+        .card-img {
+          width: 300px;
+          height: 475px;
+          border-radius: 9px;
+        }
+        .card-link-wrapper {
+          position: absolute;
+          left: calc(50% - 90px);
+          top: 80%;
+          a.icaf-button {
+            div {
+              width: 180px;
+              height: 67px;
+            }
+          }
+        }
+      }
+      .wwd-description {
+        color: $ICAF_BLUE;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        max-width: 252px;
+        margin-left: 24px;
+        height: 146px;
+        margin-top: 56px;
+      }
+    }
+  }
+}

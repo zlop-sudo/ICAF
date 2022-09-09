@@ -1,0 +1,147 @@
+body > .container {
+  max-width: 1440px;
+  padding-left: 0;
+  padding-right: 0;
+  font-family: "Nunito";
+  font-style: normal;
+}
+
+.section-title {
+  color: #134380;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 55px;
+  margin-top: 85px;
+  padding-left: 135px;
+}
+
+.section-description {
+  color: #575756;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 32px;
+  padding-left: 135px;
+  padding-right: 146px;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  height: 584px;
+  margin-top: 59px;
+  margin-left: 0%;
+}
+.img-container .img {
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  left: -100%;
+  right: -100%;
+  margin: auto;
+}
+
+.description {
+  color: #134380;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  margin-top: 77px;
+  padding-left: 146px;
+  padding-right: 146px;
+}
+
+.partners {
+  margin-top: 78px;
+}
+.partners ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+.partners ul:not(:last-child) {
+  margin-bottom: 29px;
+}
+.partners ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partners ul li:not(:last-child) {
+  margin-right: 52px;
+}
+.partners ul li img {
+  width: 246px;
+  height: 246px;
+}
+.partners ul li #img1 {
+  position: absolute;
+  width: 183px;
+  height: 65px;
+}
+.partners ul li #img2 {
+  position: absolute;
+  width: 122px;
+  height: 122px;
+}
+.partners ul li #img3 {
+  position: absolute;
+  width: 186px;
+  height: 84px;
+}
+.partners ul li #img4 {
+  position: absolute;
+  width: 215.45px;
+  height: 30.91px;
+}
+.partners ul li #img5 {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+}
+.partners ul li #img6 {
+  position: absolute;
+  width: 161px;
+  height: 119px;
+}
+.partners ul li #img7 {
+  position: absolute;
+  width: 187px;
+  height: 105px;
+}
+.partners ul li #img8 {
+  position: absolute;
+  width: 148px;
+  height: 98px;
+}
+.partners ul li #img9 {
+  position: absolute;
+  width: 220px;
+  height: 30.53px;
+}
+.partners ul li #img10 {
+  position: absolute;
+  width: 223px;
+  height: 68px;
+}
+.partners ul li div {
+  border-radius: 10px;
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  opacity: 0;
+  transition: 0.5s ease;
+  background: #134380;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFFFFF;
+}
+.partners ul li:hover div {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=icaf-about.css.map */

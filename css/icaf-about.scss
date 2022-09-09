@@ -1,0 +1,149 @@
+// @import "./_icaf-colors.scss";
+
+body > .container {
+    max-width: 1440px;
+    padding-left: 0;
+    padding-right: 0;
+    font-family: "Nunito";
+    font-style: normal;
+}
+
+.section-title {
+    color: #134380;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 55px;
+    margin-top: 85px;
+    padding-left: 135px;
+}
+  
+.section-description {
+    color: #575756;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    margin-top: 32px;
+    padding-left: 135px;
+    padding-right: 146px;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    height: 584px;
+    margin-top: 59px;
+    margin-left: 0%;
+
+    .img {
+        position: absolute;
+        top: -100%;
+        bottom: -100%;
+        left: -100%;
+        right: -100%;
+        margin: auto;
+    }
+}
+
+.description {
+    color: #134380;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 33px;
+    margin-top: 77px;
+    padding-left: 146px;
+    padding-right: 146px;
+}
+
+.partners {
+    margin-top: 78px;
+  
+    ul {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+        &:not(:last-child) {
+            margin-bottom: 29px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:not(:last-child) {
+                margin-right: 52px;
+            }
+            img {
+                width: 246px;
+                height: 246px;
+            }
+            #img1 {
+                position: absolute;
+                width: 183px;
+                height: 65px;
+            }
+            #img2 {
+                position: absolute;
+                width: 122px;
+                height: 122px;
+            }
+            #img3 {
+                position: absolute;
+                width: 186px;
+                height: 84px;
+            }
+            #img4 {
+                position: absolute;
+                width: 215.45px;
+                height: 30.91px;
+            }
+            #img5 {
+                position: absolute;
+                width: 120px;
+                height: 120px;
+            }
+            #img6 {
+                position: absolute;
+                width: 161px;
+                height: 119px;
+            }
+            #img7 {
+                position: absolute;
+                width: 187px;
+                height: 105px;
+            }
+            #img8 {
+                position: absolute;
+                width: 148px;
+                height: 98px;
+            }
+            #img9 {
+                position: absolute;
+                width: 220px;
+                height: 30.53px;
+            }
+            #img10 {
+                position: absolute;
+                width: 223px;
+                height: 68px;
+            }
+            div {
+                border-radius: 10px;
+                position: absolute;
+                width: 240px;
+                height: 240px;
+                opacity: 0;
+                transition: .5s ease;
+                background: #134380;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 25px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                color: #FFFFFF;
+            }
+        }
+        li:hover div {
+            opacity: 1;
+        }
+    }
+  }
